@@ -18,6 +18,7 @@ class MyApp extends App {
           }
 
           body {
+            background: #222;
             margin: 0px;
             padding: 0px;
             min-height: 100vh;

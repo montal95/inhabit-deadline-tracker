@@ -36,61 +36,64 @@ const Nav = () => {
         </div>
       </nav>
       <style jsx>{`
-      .nav-container {
-        width: 100%;
-        background: black;
-      }
-      nav {
-        max-width: 1720px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 1fr auto 1fr;
-      }
-      .logo {
-        grid-column: 2;
-        margin auto;
-      }
-      .burger-menu {
-        display: none;
-        grid-column: 1;
-        align-self: center;
-        margin-left: 20px;
-      }
-      nav a {
-        color: white;
-        text-decoration: none;
-        text-transform: uppercase;
-        transition: 0.3s all ease-in-out;
-      }
-      .right-menu a {
-        padding: 15px 0;
-        margin-left: 15px;
-        font-size: 14px;
-        font-weight: 300;
-        letter-spacing: 0.5px;
-      }
-      .logo {
-        font-size: 40px;
-        padding: 1rem;
-      }
-      .right-menu {
-        height:30px;
-        grid-column: 2;
-        align-self: center;
-      }
-      nav a:hover {
-        opacity: 0.7;
-      }
-      @media only screen and (max-width: 1025px) {
+        .nav-container {
+          width: 100%;
+          background: black;
+        }
+        nav {
+          max-width: 1720px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: 1fr auto 1fr;
+        }
+        .logo {
+          grid-column: 2;
+          margin: auto;
+        }
         .burger-menu {
-          display: inline-block;
-          width: 40px;
+          display: none;
+          grid-column: 1;
+          align-self: center;
+          margin-left: 20px;
+        }
+        nav a {
+          color: white;
+          text-decoration: none;
+          text-transform: uppercase;
+          transition: 0.3s all ease-in-out;
+        }
+        .right-menu a {
+          padding: 15px auto;
+          margin: 0 auto;
+          font-size: 14px;
+          font-weight: 300;
+          letter-spacing: 0.5px;
+        }
+        .logo {
+          font-size: 40px;
+          padding: 1rem;
         }
         .right-menu {
-          ${menu ? "display: none;" : ""}
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          height: 40px;
+          grid-column: 2;
+          align-self: center;
         }
-      }
-    `}</style>
+        nav a:hover {
+          opacity: 0.7;
+        }
+        @media only screen and (max-width: 1025px) {
+          .burger-menu {
+            display: inline-block;
+            width: 40px;
+          }
+          .right-menu {
+            ${menu ? "display: none;" : ""}
+            grid-column: 1 / span 3;
+          }
+        }
+      `}</style>
     </div>
   );
 };

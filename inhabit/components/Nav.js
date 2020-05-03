@@ -38,10 +38,11 @@ const Nav = () => {
       <style jsx>{`
         .nav-container {
           width: 100%;
-          background: black;
+          background: linear-gradient(to right, green, cyan);
+          padding-bottom: 0.5em;
         }
         nav {
-          max-width: 1720px;
+          background: black;
           margin: 0 auto;
           display: grid;
           grid-template-columns: 1fr auto 1fr;

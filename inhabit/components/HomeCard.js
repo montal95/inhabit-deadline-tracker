@@ -24,14 +24,6 @@ const HomeCard = ({ children }) => {
           padding: 4rem;
           border-radius: 20%;
         }
-        .homeCard h1 {
-          margin: 15px 0;
-          font-size: 3rem;
-          font-weight: bolder;
-        }
-        .homeCard p {
-          margin: 10px 0;
-        }
         @media only screen and (max-width: 1025px) {
           .homeDiv {
             grid-template-columns: 5% 90% 5%;

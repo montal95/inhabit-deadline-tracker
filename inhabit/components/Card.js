@@ -1,34 +1,34 @@
-const HomeCard = ({ children }) => {
+const Card = ({ children }) => {
   return (
-    <div className="homeDiv">
-      <div className="homeCardWrapper">
-        <article className="homeCard">{children}</article>
+    <div className="pageDiv">
+      <div className="cardWrapper">
+        <article className="pageCard">{children}</article>
       </div>
       <style jsx>{`
-        .homeDiv {
+        .pageDiv {
           display: grid;
           grid-template-columns: 1fr 3fr 1fr;
           max-width: 1720px;
           margin: 20px auto;
         }
-        .homeCardWrapper {
+        .cardWrapper {
           background: darkgray;
-          padding: 8px;
+          padding: 4px;
           border-radius: 20%;
           grid-column: 2;
           max-width: 980px;
         }
-        .homeCard {
+        .pageCard {
           background: #222;
           color: white;
           padding: 4rem;
           border-radius: 20%;
         }
         @media only screen and (max-width: 1025px) {
-          .homeDiv {
+          .pageDiv {
             grid-template-columns: 5% 90% 5%;
           }
-          .homeCard {
+          .pageCard {
             padding: 1.5rem;
           }
         }
@@ -37,4 +37,4 @@ const HomeCard = ({ children }) => {
   );
 };
 
-export default HomeCard;
+export default Card;

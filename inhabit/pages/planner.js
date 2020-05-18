@@ -1,9 +1,12 @@
 import Layout from "../components/Layout";
+import Card from "../components/Card";
 
 export default function Planner() {
   return (
     <Layout pageTitle="Inhabit - Planner">
-      <h1>Hello Planner Page!</h1>
+      <Card>
+        <h1>Hello Planner Page!</h1>
+      </Card>s
     </Layout>
   );
 }

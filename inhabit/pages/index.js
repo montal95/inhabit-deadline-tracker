@@ -1,10 +1,24 @@
 import Layout from "../components/Layout";
-import HomeCard from "../components/HomeCard";
+import Card from "../components/Card";
 
-export default function Home() {
+import { withApollo } from "../lib/apollo";
+import { useQuery } from "@apollo/react-hooks";
+import gql from "graphql-tag";
+
+const HELLO_QUERY = gql`
+  query HelloQuery {
+    sayHello
+  }
+`;
+
+const Home = () => {
+  const { data, loading, error } = useQuery(HELLO_QUERY);
+  if (loading) return <div />;
+  console.log(data);
+
   return (
     <Layout pageTitle="Inhabit - Home">
-      <HomeCard>
+      <Card>
         <h1>
           Keeping Up
           <br />
@@ -26,7 +40,9 @@ export default function Home() {
             margin: 10px 0;
           }
         `}</style>
-      </HomeCard>
+      </Card>
     </Layout>
   );
-}
+};
+
+export default withApollo(Home);

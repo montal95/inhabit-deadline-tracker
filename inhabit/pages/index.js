@@ -11,16 +11,15 @@ const HELLO_QUERY = gql`
   }
 `;
 
-const Home = () => {
+const Home = ({ initialFirstName }) => {
   const { data, loading, error } = useQuery(HELLO_QUERY);
   if (loading) return <div />;
-  console.log(data);
 
   return (
     <Layout pageTitle="Inhabit - Home">
       <Card>
         <h1>
-          Keeping Up
+          This Is Keeping Up
           <br />
           Made easy
         </h1>
@@ -30,6 +29,7 @@ const Home = () => {
           sed, exercitationem sequi dolore culpa incidunt accusamus, quasi unde
           reprehenderit ea molestias.
         </p>
+
         <style jsx>{`
           h1 {
             margin: 15px 0;

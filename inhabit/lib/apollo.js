@@ -1,15 +1,14 @@
-import ApolloClient from "apollo-boost";
+import ApolloClient, { InMemoryCache } from "apollo-boost";
 import Head from "next/head";
 import { ApolloProvider } from "@apollo/react-hooks";
 import fetch from "isomorphic-unfetch";
-import Head from "next/head";
 
 export function withApollo(PageComponent) {
-  const WithApollo = (props) => {
-    const client = initApolloClient();
+  const WithApollo = ({ apolloClient, apolloState, ...pageProps }) => {
+    const client = apolloClient || initApolloClient(apolloState);
     return (
       <ApolloProvider client={client}>
-        <PageComponent {...props} />
+        <PageComponent {...pageProps} />
       </ApolloProvider>
     );
   };
@@ -44,7 +43,7 @@ export function withApollo(PageComponent) {
 
       Head.rewind();
     }
-    
+
     const apolloState = apolloClient.cache.extract();
     return {
       ...pageProps,
@@ -55,10 +54,13 @@ export function withApollo(PageComponent) {
   return WithApollo;
 }
 
-const initApolloClient = () => {
+const initApolloClient = (initialState = {}) => {
+  const cache = new InMemoryCache().restore(initialState);
+
   const client = new ApolloClient({
     uri: "http://localhost:3000/api/graphql",
     fetch,
+    cache,
   });
   return client;
 };

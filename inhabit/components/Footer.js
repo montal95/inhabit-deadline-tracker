@@ -8,15 +8,17 @@ const Footer = () => {
       <footer>
         <p>site design &copy;2020 Sam Montalvo Jr</p>
         <div className="footerLinks">
-          <Link href="https://github.com/montal95/inhabit-deadline-tracker">
-            <a target="_blank">
-              <FontAwesomeIcon icon={faGithubSquare} size="1x" color="white" />
-              Github
-            </a>
-          </Link>
-          <Link href="http://www.sammontalvojr.com/">
-            <a target="_blank">Portfolio</a>
-          </Link>
+          <a
+            href="https://github.com/montal95/inhabit-deadline-tracker"
+            target="_blank"
+          >
+            <FontAwesomeIcon icon={faGithubSquare} size="1x" color="white" />
+            Github
+          </a>
+
+          <a href="http://www.sammontalvojr.com/" target="_blank">
+            Portfolio
+          </a>
         </div>
       </footer>
       <style jsx>{`

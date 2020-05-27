@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Nav from "./Nav";
 import Footer from "./Footer";
+import SigninForm from "../components/SigninForm";
 
 const Layout = ({ children, pageTitle }) => {
   return (
@@ -19,7 +20,11 @@ const Layout = ({ children, pageTitle }) => {
         ></link>
       </Head>
       <Nav />
-      <main>{children}</main>
+      <main>
+        {children}
+        {/* <SignupForm /> */}
+        <SigninForm />
+      </main>
       <Footer />
     </div>
   );
